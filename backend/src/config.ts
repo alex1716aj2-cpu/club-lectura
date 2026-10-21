@@ -9,7 +9,7 @@ function required(name: string): string {
 export const config = {
   port: Number(process.env.PORT ?? 4000),
   jwtSecret: required("JWT_SECRET"),
-  jwtExpiresIn: process.env.JWT_EXPIRES_IN ?? "1d",
+  jwtExpiresInSeconds: Number(process.env.JWT_EXPIRES_HOURS ?? 24) * 60 * 60,
   cookieSecure: process.env.COOKIE_SECURE === "true",
   frontendOrigin: process.env.FRONTEND_ORIGIN ?? "http://localhost:3000",
 };
