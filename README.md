@@ -174,7 +174,6 @@ Cuando hay un error, siempre llega con la misma forma, para que el frontend pued
 
 - No hay pruebas automáticas.
 - No hay un límite de intentos para iniciar sesión (alguien podría probar contraseñas sin parar).
-- Los archivos `package-lock.json` (que fijan las versiones exactas de las librerías) no están en el repositorio, y por eso los Dockerfiles usan `npm install`.
 - No hice los puntos extra: búsqueda, paginación, roles, estado de lectura ni publicación en internet.
 
 ### Qué mejoraría con más tiempo
@@ -182,7 +181,7 @@ Cuando hay un error, siempre llega con la misma forma, para que el frontend pued
 - Agregar pruebas automáticas del backend y del flujo completo (registrarse, entrar, crear un libro).
 - Limitar los intentos de inicio de sesión y hacer que el pase dure menos tiempo, con uno de renovación, para poder cancelar sesiones.
 - Agregar búsqueda y paginación en la tabla, y dos tipos de usuario: `admin` (puede todo) y `consulta` (solo lee).
-- Guardar los `package-lock.json`, usar `npm ci` en los Dockerfiles y hacer que el backend no corra con permisos de administrador dentro del contenedor.
+- Usar npm ci en los Dockerfiles y hacer que el backend no corra con permisos de administrador dentro del contenedor.
 - Revisar automáticamente cada cambio antes de aceptarlo (CI).
 
 ## Cómo se organizó el trabajo en Git
