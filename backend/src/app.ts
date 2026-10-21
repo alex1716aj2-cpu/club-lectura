@@ -4,6 +4,7 @@ import express from "express";
 import { config } from "./config";
 import { errorHandler, notFoundHandler } from "./middleware/errorHandler";
 import { authRouter } from "./modules/auth/auth.routes";
+import { booksRouter } from "./modules/books/books.routes";
 
 export function createApp() {
   const app = express();
@@ -17,6 +18,7 @@ export function createApp() {
   });
 
   app.use("/auth", authRouter);
+  app.use("/books", booksRouter);
 
   app.use(notFoundHandler);
   app.use(errorHandler);
